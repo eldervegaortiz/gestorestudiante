@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Estilos Globales y de Base
+   ========================================================================== */
+
+/* Configuración básica de la página */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f4f6f8; /* Color de fondo suave para evitar fatiga visual */
+    margin: 0;
+    padding: 20px;
+    color: #2c3e50; /* Color principal de texto (gris oscuro con toque azulado) */
+    line-height: 1.5;
+}
+
+/* Contenedor principal para mantener la interfaz centrada */
+.contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Títulos principales */
+h1 {
+    text-align: center;
+    color: #1a252f;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   Secciones y Formularios
+   ========================================================================== */
+
+/* Tarjetas o módulos dentro de la aplicación */
+.seccion {
+    background-color: #ffffff;
+    padding: 24px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para dar profundidad */
+    border: 1px solid #e1e8ed;
+}
+
+/* Etiquetas de inputs */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* Campos de entrada de datos y listas desplegables */
+input,
+select {
+    box-sizing: border-box; /* Previene que el padding altere el ancho total del elemento */
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estado de enfoque en inputs */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+/* ==========================================================================
+   Botones
+   ========================================================================== */
+
+/* Botón general */
+button {
+    padding: 9px 16px;
+    margin: 4px;
+    background-color: #edf2f7;
+    color: #2d3748;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efecto al pasar el cursor sobre un botón activo */
+button:hover {
+    background-color: #e2e8f0;
+}
+
+/* Feedback visual al hacer clic */
+button:active {
+    transform: translateY(1px);
+}
+
+/* Botón deshabilitado */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: #e2e8f0;
+}
+
+/* Estado activo (para pestañas o filtros seleccionados) */
+.activo {
+    background-color: #3182ce;
+    color: #ffffff;
+    border-color: #2b6cb0;
+}
+
+.activo:hover {
+    background-color: #2b6cb0;
+}
+
+/* Botón de acción destructiva (Borrar Todo) */
+.borrar-todo {
+    background-color: #e53e3e;
+    color: #ffffff;
+    border: none;
+    margin-top: 15px;
+}
+
+.borrar-todo:hover {
+    background-color: #c53030;
+}
+
+/* Contenedores específicos de botones */
+.botones-filtro {
+    margin-top: 15px;
+}
+
+.botones-estudiante {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; /* Separación consistente entre botones */
+}
+
+/* ==========================================================================
+   Estados y Alertas (Colores de Feedback)
+   ========================================================================== */
+
+.error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+.verde {
+    color: #38a169;
+    font-weight: 600;
+}
+
+.naranja {
+    color: #dd6b20;
+    font-weight: 600;
+}
+
+.rojo {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Componente: Estudiante
+   ========================================================================== */
+
+/* Tarjeta individual de cada estudiante */
+.estudiante {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+.estudiante:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.estudiante h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+/* ==========================================================================
+   Diseño Adaptativo (Responsive Design)
+   ========================================================================== */
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .seccion {
+        padding: 16px;
+    }
+
+    /* Cambia la distribución del estudiante de fila a columna en móviles */
+    .estudiante {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botones-estudiante {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
